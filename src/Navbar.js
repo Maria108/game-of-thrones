@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import House from './House'
 import Books from './Books'
+import HouseInfo from './HouseInfo';
 
 class NavBar extends React.Component {
   render() {
@@ -22,6 +23,10 @@ class NavBar extends React.Component {
           <Route
             path="/books"
             component={Books}
+          />
+          <Route
+            path="/houseinfo"
+            component={HouseInfo}
           />
         </Switch>
       </div>
