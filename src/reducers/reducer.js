@@ -1,10 +1,12 @@
 import { LOAD_BOOKS } from "../actions/bookAction"
 import { LOAD_HOUSES } from "../actions/houseAction"
 import { GET_HOUSE } from "../actions/houseAction"
+import { GET_CHARACTERS } from "../actions/characterAction"
 
 const initialState = {
   books: [],
-  houses: []
+  houses: [],
+  characters: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -17,6 +19,9 @@ const reducer = (state = initialState, action) => {
     }
     case GET_HOUSE: {
       return { ...state, chosenHouse: action.payload}
+    }
+    case GET_CHARACTERS: {
+      return { ...state, characters: action.payload}
     }
 
     default:

@@ -3,7 +3,7 @@ export const GET_HOUSE = 'GET_HOUSE'
 
 export function loadHouses(payload) {
   return dispatch => {
-    return fetch("https://anapioficeandfire.com/api/houses")
+    return fetch("https://anapioficeandfire.com/api/houses?page=1&pageSize=20")
     .then(res => res.json())
     .then(houses => {
       dispatch({

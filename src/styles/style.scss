@@ -1,22 +1,94 @@
-@import "bourbon";
-@import "neat";
+$color_1: azure;
+$color_2: grey;
+$color_3: white;
+$background_color_1: black;
 
-body {
-  @include grid-container;
-  @include grid-column;
-  background-color: whitesmoke;
-  color: #2b2b2b;
-  font-family: $font-stack-system;
+.main-pic {
+  margin-top: 70px;
+  height: 90vh;
+  background-image: url('../images/main.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-$custom-grid--thirds: (columns: 3,
-  gutter: 60px,
-);
-
-.custom-grid--thirds {
-  @include grid-container;
+nav {
+  background-color: $background_color_1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 3;
 }
 
-.custom-grid--thirds__a-single-column {
-  @include grid-column(1, $custom-grid--thirds);
+.links {
+  float: right;
+  margin: 15px 10px;
+  padding: 10px;
+  font-size: 20px;
+  color: $color_1;
+  text-decoration: none;
+
+  &:hover {
+    color: $color_2;
+  }
+}
+
+.main-header {
+  margin: 15px;
+  padding: 10px;
+  float: left;
+  color: $color_1;
+  text-decoration: none;
+  font-size: 25px;
+
+  &:hover {
+    color: $color_2;
+  }
+}
+
+.item-list {
+  margin-top: 79px;
+  margin-left: 20%;
+}
+
+.book {
+  margin: 20px;
+  color: $color_3;
+}
+
+.picture-book {
+  height: 90vh;
+  background-image: url('../images/white.jpg');
+  background-size: cover;
+}
+
+.house {
+  margin: 10px;
+}
+
+.house-name {
+  color: $color_3;
+
+  &:hover {
+    color: $color_2;
+  }
+}
+
+.picture-house {
+  height: 90vh;
+  background-image: url('../images/map.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.house-info {
+  margin: 10px;
+  color: $color_3;
+  list-style-type: circle;
+}
+
+.house-info-picture {
+  height: 90vh;
+  background-image: url('../images/wolf.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }

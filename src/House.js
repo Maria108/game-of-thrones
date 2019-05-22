@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/style.scss';
 
 import { withRouter } from "react-router";
 
@@ -11,6 +11,9 @@ import { connect } from "react-redux";
 import { loadHouses, getHouse } from "./actions/houseAction"
 
 import HouseInfo from "./HouseInfo"
+
+import { Container, Row, Col } from 'react-bootstrap';
+
 
 class House extends Component {
 
@@ -29,21 +32,27 @@ class House extends Component {
       return house
     })
     return (
-      <div>
-          {listHouses.map((value, index) => {
-            return (
-              <div key={index}>
-                <div ><Link to="/houseinfo" onClick={ ()=> this.handleClick(value)}>{value.name}</Link></div>
-              </div>
-            )
-          })}
-          <Switch>
-          <Route
-           path="/houseinfo"
-           component={HouseInfo}
-          //  render = {()=> <HouseInfo house={this.props.houses}/>}
-          />
-        </Switch>
+      <div className="picture-house">
+      <Container>
+        <Row>
+          <Col className="item-list">
+            {listHouses.map((value, index) => {
+              return (
+                <div key={index}>
+                  <div className="house" ><Link className="house-name" to="/houseinfo" onClick={ ()=> this.handleClick(value)}>{value.name}</Link></div>
+                </div>
+              )
+            })}
+            <Switch>
+              <Route
+              path="/houseinfo"
+              component={HouseInfo}
+              //  render = {()=> <HouseInfo house={this.props.houses}/>}
+              />
+            </Switch>
+          </Col>
+        </Row>
+      </Container>
       </div>
     );
   }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './styles/style.scss';
 
 import { withRouter } from "react-router";
 
@@ -7,7 +7,9 @@ import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
 import { loadBooks } from "./actions/bookAction"
-// import { loadHouses } from "./actions/houseAction"
+
+import { Container, Row, Col } from 'react-bootstrap';
+
 
 class Books extends Component {
 
@@ -21,12 +23,18 @@ class Books extends Component {
       return book.name
     })
     return (
-      <div>
-         <ul>
-          {listBooks.map((value, index) => {
-            return <li key={index}>{value}</li>
-          })}
-        </ul>
+      <div className="picture-book">
+        <Container>
+          <Row >
+            <Col className="item-list">
+              <ol>
+                {listBooks.map((value, index) => {
+                  return <li className="book" key={index}>{value}</li>
+                })}
+              </ol>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
